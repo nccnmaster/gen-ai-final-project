@@ -3,23 +3,19 @@ import google.generativeai as genai
 import os
 from dotenv import load_dotenv
 
-# Load .env file
 load_dotenv()
 
-# Streamlit page config
 st.set_page_config(page_title="🎭 AI Excuse Generator", page_icon="🎭")
 st.title("🎭 AI Excuse Generator")
 st.caption("Get AI-generated excuses using Gemini 1.5 Flash!")
 
-# Load API key from environment
 api_key = os.getenv("GEMINI_API_KEY")
 
 if api_key:
     try:
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel("models/gemini-1.5-flash")  # ✅ Must include "models/" prefix
+        model = genai.GenerativeModel("models/gemini-1.5-flash")  
 
-        # UI inputs
         situation = st.selectbox("📌 Choose a situation", ["Late to class", "Missed a deadline", "Forgot homework", "Skipped meeting", "Overslept"])
         tone = st.selectbox("🎨 Choose a tone", ["Funny", "Serious", "Apologetic", "Creative"])
         extra = st.text_area("📝 Extra details (optional)")
