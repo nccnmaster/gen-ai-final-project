@@ -86,8 +86,10 @@ __pycache__/
 ## 👨‍💻 Author
 
 Nitin C
+VIT Chennai
 23BCE1080
 Gen AI Slot 1
+
 
 ---
 
